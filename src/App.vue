@@ -3,9 +3,9 @@
 
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/projects">Projects</router-link> |
-    <router-link to="/contact">Contact</router-link>
+    <router-link to="/mainframe/">Home</router-link> |
+    <router-link to="/mainframe/projects">Projects</router-link> |
+    <router-link to="/mainframe/contact">Contact</router-link>
   </nav>
   <router-view />
 </template>
