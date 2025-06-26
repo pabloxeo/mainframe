@@ -12,7 +12,7 @@
 
 <style scoped>
 nav {
-    margin-left: -2em;
+    margin-left: -1em;
     margin-bottom: 1em;
     display: flex;
     align-items: center;

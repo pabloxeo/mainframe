@@ -7,7 +7,8 @@ body {
   font-family: 'Fira Mono', 'Consolas', monospace;
   min-height: 100vh;
   margin: 0;
-  margin-left: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 a,

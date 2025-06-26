@@ -5,7 +5,5 @@ import Cube from '../components/Cube.vue'
 
 <template>
   <Hero />
-  <div class="flex justify-center items-center min-h-[50vh]">
-    <Cube />
-  </div>
+  <Cube />
 </template>
