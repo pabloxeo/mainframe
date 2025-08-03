@@ -1,26 +1,21 @@
 @import "tailwindcss";
 
-/* Add this to App.vue, outside <style scoped>, or in a global CSS file */
-body {
-  background: #181818;
-  color: #fff9c4;
-  font-family: 'Fira Mono', 'Consolas', monospace;
-  min-height: 100vh;
-  margin: 0;
-  margin-left: 1em;
-  margin-right: 1em;
-}
 
-a,
-.router-link-active,
-.router-link-exact-active {
-  color: #fff9c4;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a:hover,
-.router-link-active:hover,
-.router-link-exact-active:hover {
-  color: #ffe082; /* slightly brighter on hover */
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+  body {
+    background-color: #DB4C40;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+
+  body.dark-mode {
+    background-color: #3C153B;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+
 }
