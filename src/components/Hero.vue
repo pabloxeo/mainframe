@@ -1,5 +1,8 @@
 <template>
-    <canvas ref="canvas" class="scene" />
+    <div class="container">
+        <div class="nombre">PA BLo</div>
+        <canvas ref="canvas" class="scene" />
+    </div>
 </template>
 
 <script setup>
@@ -9,15 +12,7 @@ import { useWindowSize } from "@vueuse/core";
 import { initRenderer, updateRenderer } from "../renderer";
 import { initCamera, updateCamera } from "../camera";
 import { createCube } from "../cube";
-import { watch } from 'vue';
-import { oscuro } from '../stores/darkMode';
 import { lightGroup } from '../light.js'
-
-let color = oscuro.value ? 0x3C153B : 0xDB4C40;
-
-watch(oscuro, (isDark) => {
-    renderer.setClearColor(isDark ? 0x3C153B : 0xDB4C40, 1);
-});
 
 const canvas = ref(null);
 const scene = new Scene();
@@ -41,7 +36,7 @@ watchEffect(() => {
 
 onMounted(() => {
     renderer = initRenderer(canvas.value);
-    renderer.setClearColor(color, 1);
+    renderer.setClearColor(0xfff, 0);
     updateRenderer(renderer, width.value, height.value);
     updateCamera(camera, aspectRatio.value);
     const tick = () => {
@@ -60,9 +55,55 @@ onMounted(() => {
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Ultra&display=swap');
 
-canvas {
-  display: block;  /* avoid inline gaps */
-  margin: 0;
+.container {
+    transform-origin: top left;
+    transform: scale(1);
+    scale: 10vw;
+    margin: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+
+}
+
+canvas.scene {
+    position: relative;
+    z-index: 1; /* now above the text */
+
+}
+
+.nombre {
+    position: absolute;
+    z-index: 0; /* now behind the canvas */
+    font-family: 'Climate Crisis', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "YEAR" 1979;
+    font-size: 12em;
+    letter-spacing: -0.3em;
+    line-height: 1.2em; /* reduce vertical gap */
+    color: black;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    width: auto;
+}
+
+
+@media (max-width: 1400px) {
+  .container {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    transform: scale(0.6);
+  }
 }
 </style>
