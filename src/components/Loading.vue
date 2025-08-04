@@ -33,8 +33,8 @@ function move() {
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
 .loading-container {
+  font-family: 'Pixelify Sans', sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -47,7 +47,6 @@ function move() {
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 1.0);
     outline: solid;
-    padding: 3px;
     width: 75vw;
     display: flex;
 }
@@ -55,7 +54,6 @@ function move() {
 #loading{
   width: inherit;
   position: absolute;
-  font-family: 'Pixelify Sans', sans-serif;
   font-size: 1.8em;
   color: rgb(0, 0, 0);
 }
@@ -63,7 +61,7 @@ function move() {
 #myBar {
     border-radius: 20px;
     height: 40px;
-    background-color: #E06E3E; /* 50% opacity background only */
+    background-color: #DF7A44; /* 50% opacity background only */
 }
 
 </style>

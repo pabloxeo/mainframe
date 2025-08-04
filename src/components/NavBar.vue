@@ -1,10 +1,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import offImg from '../assets/off.png'
+import onImg from '../assets/on.png'
+import menuOff from '../assets/menuOff.png'
+import menuOn from '../assets/menuOn.png'
+import { oscuro } from '../stores/darkMode';
 
-const oscuro = ref(false)
+const imageSrc = ref(onImg)
 
-const imageSrc = ref(new URL('../assets/on.png', import.meta.url).href)
-
+const menuSrc = ref(menuOn)
 
 
 const showLinks = ref(false)
@@ -32,10 +36,8 @@ onUnmounted(() => {
 
 function changeImage() {
     oscuro.value = !oscuro.value
-    imageSrc.value = new URL(
-        oscuro.value ? '../assets/off.png' : '../assets/on.png',
-        import.meta.url
-    ).href
+    imageSrc.value = oscuro.value ? offImg : onImg
+    menuSrc.value = oscuro.value ? menuOff : menuOn
 
     // toggle a class on the <body> tag
     document.body.classList.toggle('dark-mode', oscuro.value)
@@ -44,12 +46,10 @@ function changeImage() {
 
 <template>
     <div :class="['header', oscuro ? 'darkmode' : '']">
-        <img :src="imageSrc" @click="changeImage" alt="xeo logo" style="height: 90px;" id="switch" />
+        <img :src="imageSrc" @click="changeImage" alt="xeo logo" id="switch" />
 
         <!-- Hamburger icon for mobile -->
-        <div class="hamburger" @click="toggleMenu">
-            ☰
-        </div>
+        <img :src="menuSrc" class="hamburger" @click="toggleMenu"></img>
 
         <!-- Navigation links -->
         <div class="links" :class="{ 'mobile-hidden': !showLinks } " @click="toggleMenu">
@@ -62,9 +62,12 @@ function changeImage() {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 .header {
+    font-family: 'Pixelify Sans', sans-serif;
+    height: 4em;
     color: rgb(0, 0, 0);
-    background-color: #E06E3E;
+    background-color: #DF7A44;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,7 +78,7 @@ function changeImage() {
 
 .header.darkmode {
     color: #fff;
-    background-color: #69424E;
+    background-color: #282A55;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,10 +92,12 @@ function changeImage() {
     margin-right: 2vw;
     gap: 10vw;
     display: flex;
-    font-size: 2vw;
+    font-size: 1.5em;
 }
 
 #switch {
+    margin-left: 1em;
+    height: 50px;
     cursor: pointer;
     /* changes cursor on hover */
     transition: transform 0.2s;
@@ -106,8 +111,7 @@ function changeImage() {
 /* Default: hide hamburger on desktop */
 .hamburger {
     display: none;
-    font-size: 60px;
-    margin: inherit;
+    height: 90px;
 }
 
 /* On small screens, we *conditionally* hide the links */
@@ -122,7 +126,6 @@ function changeImage() {
         border-radius: 0.5em;
         gap: 1em;
         outline: solid;
-        font-size: 5vw;
     }
 
     .links.mobile-hidden {

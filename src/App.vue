@@ -11,6 +11,6 @@ setTimeout(() => {
 
 <template>
   <Loading v-if="isLoading" />
-  <NavBar />
-  <router-view />
+  <NavBar v-if="!isLoading" />
+  <router-view v-if="!isLoading" />
 </template>
