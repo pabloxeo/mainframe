@@ -2,13 +2,12 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import offImg from '../assets/off.png'
 import onImg from '../assets/on.png'
-import menuOff from '../assets/menuOff.png'
-import menuOn from '../assets/menuOn.png'
+import menu from '../assets/menu.png'
 import { oscuro } from '../stores/darkMode';
 
 const imageSrc = ref(onImg)
 
-const menuSrc = ref(menuOn)
+const menuSrc = ref(menu)
 
 
 const showLinks = ref(false)
@@ -37,7 +36,6 @@ onUnmounted(() => {
 function changeImage() {
     oscuro.value = !oscuro.value
     imageSrc.value = oscuro.value ? offImg : onImg
-    menuSrc.value = oscuro.value ? menuOff : menuOn
 
     // toggle a class on the <body> tag
     document.body.classList.toggle('dark-mode', oscuro.value)
@@ -66,25 +64,26 @@ function changeImage() {
 .header {
     font-family: 'Pixelify Sans', sans-serif;
     height: 4em;
-    color: rgb(0, 0, 0);
-    background-color: #DF7A44;
+    color: white;
+    background-color: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: solid;
-    border-radius: 12em;
     margin: 1em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
 }
 
 .header.darkmode {
-    color: #fff;
-    background-color: #282A55;
+    color: white;
+    background-color: #3C153B;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: solid;
-    border-radius: 12em;
     margin: 1em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+
 }
 
 
@@ -125,7 +124,7 @@ function changeImage() {
         padding: 1em;
         border-radius: 0.5em;
         gap: 1em;
-        outline: solid;
+        z-index: 3;
     }
 
     .links.mobile-hidden {

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="nombre">PA BLo</div>
+        <div :class="['nombre', oscuro ? 'darkmode' : '']">PA BLO</div>
         <canvas ref="canvas" class="scene" />
     </div>
 </template>
@@ -13,6 +13,8 @@ import { initRenderer, updateRenderer } from "../renderer";
 import { initCamera, updateCamera } from "../camera";
 import { createCube } from "../cube";
 import { lightGroup } from '../light.js'
+import { oscuro } from '../stores/darkMode.js'
+
 
 const canvas = ref(null);
 const scene = new Scene();
@@ -36,7 +38,7 @@ watchEffect(() => {
 
 onMounted(() => {
     renderer = initRenderer(canvas.value);
-    renderer.setClearColor(0xfff, 0);
+    renderer.setClearColor(0xffffff, 0);
     updateRenderer(renderer, width.value, height.value);
     updateCamera(camera, aspectRatio.value);
     const tick = () => {
@@ -72,13 +74,11 @@ onMounted(() => {
 
 canvas.scene {
     position: relative;
-    z-index: 1; /* now above the text */
-
+    opacity: 0.8;
 }
 
 .nombre {
     position: absolute;
-    z-index: 0; /* now behind the canvas */
     font-family: 'Climate Crisis', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -89,6 +89,23 @@ canvas.scene {
     letter-spacing: -0.3em;
     line-height: 1.2em; /* reduce vertical gap */
     color: black;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    width: auto;
+}
+
+.nombre.darkmode{
+  position: absolute;
+    font-family: 'Climate Crisis', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "YEAR" 1979;
+    font-size: 12em;
+    letter-spacing: -0.3em;
+    line-height: 1.2em; /* reduce vertical gap */
+    color: #3C153B;
     writing-mode: vertical-lr;
     text-orientation: upright;
     width: auto;
