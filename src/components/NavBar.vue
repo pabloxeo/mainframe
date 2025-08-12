@@ -1,9 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import offImg from '../assets/off.png'
 import onImg from '../assets/on.png'
 import menu from '../assets/menu.png'
-import { oscuro } from '../stores/darkMode';
 
 const imageSrc = ref(onImg)
 
@@ -33,18 +31,11 @@ onUnmounted(() => {
     window.removeEventListener('resize', handleResize)
 })
 
-function changeImage() {
-    oscuro.value = !oscuro.value
-    imageSrc.value = oscuro.value ? offImg : onImg
-
-    // toggle a class on the <body> tag
-    document.body.classList.toggle('dark-mode', oscuro.value)
-}
 </script>
 
 <template>
-    <div :class="['header', oscuro ? 'darkmode' : '']">
-        <img :src="imageSrc" @click="changeImage" alt="xeo logo" id="switch" />
+    <div :class="['header', '']">
+        <img :src="imageSrc" alt="xeo logo" id="switch" />
 
         <!-- Hamburger icon for mobile -->
         <img :src="menuSrc" class="hamburger" @click="toggleMenu"></img>
@@ -65,31 +56,17 @@ function changeImage() {
     font-family: 'Pixelify Sans', sans-serif;
     height: 4em;
     color: white;
-    background-color: #000;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1em;
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
-}
-
-.header.darkmode {
-    color: white;
-    background-color: #3C153B;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1em;
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
-
+    margin: auto;
+    padding: 1em;
 }
 
 
 .links {
-    margin-right: 2vw;
-    gap: 10vw;
+    gap: 2vw;
     display: flex;
     font-size: 1.5em;
 }
@@ -117,7 +94,7 @@ function changeImage() {
 @media only screen and (max-width: 1000px) {
     .links {
         flex-direction: column;
-        background-color: inherit;
+        background-color: black;
         position: absolute;
         right: 1em;
         top: 100px;

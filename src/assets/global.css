@@ -8,10 +8,7 @@
 @layer base {
   
   body {
-    background-color: #DB4C40;
-  }
-  body.dark-mode {
-  background-color: white;
+    background-color: #784242;
   }
 
 }
