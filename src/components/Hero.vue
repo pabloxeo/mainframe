@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div>
-      Passionate Spanish software engineer diving into <b>3D graphics, game development, and high-performance computing</b>. 
-      Skilled in <b>C++</b> and <b>GPU programming</b> — building interactive worlds where code meets creativity.
+      Passionate Spanish software engineer diving into 3D graphics, game development, and high-performance computing. 
+      Skilled in C++ and GPU programming — building interactive worlds where code meets creativity.
     </div>
   </div>
 
@@ -10,13 +10,15 @@
   <div class="section">
     <h2>Tech Stack</h2>
     <div class="stack">
-      C++ • WebGPU • CUDA • MPI • WGSL • OpenGL • React • Linux
+      C++ • WebGPU • MPI • WGSL • OpenGL • Linux • Godot
+      <br />
+      VueJS • JavaScript • Python • CMake • Git
     </div>
   </div>
 
   <!-- Current Projects -->
   <div class="section">
-    <h2>What I'm Building</h2>
+    <h2>Projects</h2>
     <div class="project-card">
       <h3>Copper</h3>
       <p>Cross-platform 3D modeling app using SDFs and ray marching in WebGPU.</p>
@@ -33,7 +35,8 @@
   <div class="section">
     <h2>Highlights</h2>
     <ul>
-      <li>- I was born</li>
+      <li>- 2nd place national university Valorant tournament.</li>
+      <li>- Really good at making coffee.</li>
     </ul>
   </div>
 </template>
@@ -50,7 +53,7 @@
     color: black;
     padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.2em; 
     width: 50%;
     outline: 2px solid black;
 }

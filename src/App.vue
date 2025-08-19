@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
+import Footer from './components/Footer.vue'
 import { ref } from 'vue'
 
 const isLoading = ref(true)
@@ -13,4 +14,5 @@ setTimeout(() => {
   <Loading v-if="isLoading" />
   <NavBar v-if="!isLoading" />
   <router-view v-if="!isLoading" />
+  <Footer v-if="!isLoading" />
 </template>

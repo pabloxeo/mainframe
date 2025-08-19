@@ -35,14 +35,12 @@ onUnmounted(() => {
 
 <template>
     <div :class="['header', '']">
-        <img :src="imageSrc" alt="xeo logo" id="switch" />
-
+        <router-link class="goto" to="/home"><img :src="imageSrc" alt="xeo logo" id="switch" /></router-link>
         <!-- Hamburger icon for mobile -->
         <img :src="menuSrc" class="hamburger" @click="toggleMenu"></img>
 
         <!-- Navigation links -->
         <div class="links" :class="{ 'mobile-hidden': !showLinks } " @click="toggleMenu">
-            <router-link class="goto" to="/home">Home</router-link>
             <router-link class="goto" to="/about">About</router-link>
             <router-link class="goto" to="/projects">Projects</router-link>
             <router-link class="goto" to="/contact">Contact</router-link>
