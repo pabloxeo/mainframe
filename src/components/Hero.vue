@@ -31,14 +31,23 @@
     </div>
   </div>
 
-  <!-- Wins -->
   <div class="section">
-    <h2>Highlights</h2>
-    <ul>
-      <li>- 2nd place national university Valorant tournament.</li>
-      <li>- Really good at making coffee.</li>
-    </ul>
-  </div>
+		<h2>Experience</h2>
+		<div class="project-card">
+			<p>
+                Worked as an Intern at Constella Intelligence, as data engineer, building tools to fix data pipelines and improve data quality.
+                <br />
+                Developed data validation tools using Python, Pandas and pySpark.
+			</p>
+			<a> July - September (2024)</a>
+		</div>
+        <p class="separator">|</p>
+        <div class="project-card">
+            <p>Searching for my first fresh graduate role</p>
+            <a>Currently</a>
+        </div>
+    </div>
+    
 </template>
 
 
