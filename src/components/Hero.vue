@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div>
+    <h2>
       Passionate Spanish software engineer diving into 3D graphics, game development, and high-performance computing. 
       Skilled in C++ and GPU programming — building interactive worlds where code meets creativity.
-    </div>
+    </h2>
   </div>
 
   <!-- Tech Stack -->
@@ -61,7 +61,6 @@
     border-radius: 1em;
     color: black;
     padding: 1em;
-    font-family: 'Pixelify Sans', sans-serif;
     font-size: 1.2em; 
     width: 50%;
     outline: 2px solid black;
@@ -69,7 +68,6 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 b {
-    font-family: 'VT323', monospace;
     font-size: 0.9em;
 
 }
@@ -80,7 +78,6 @@ b {
     padding: 1em;
     border-radius: 0.5em;
     outline: 2px solid black;
-    font-family: 'Pixelify Sans', sans-serif;
     font-size: 1.2em;
 }
 

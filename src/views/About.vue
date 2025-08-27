@@ -43,8 +43,6 @@
 	border-radius: 1em;
 	color: black;
 	padding: 1em;
-	font-family: 'Pixelify Sans', sans-serif;
-	font-size: 1.2em;
 	width: 50%;
 	outline: 2px solid black;
 }
@@ -61,13 +59,11 @@ b {
 	padding: 1em;
 	border-radius: 0.5em;
 	outline: 2px solid black;
-	font-family: 'Pixelify Sans', sans-serif;
-	font-size: 1.2em;
+	font-size: 1.0em;
 }
 
 .section h2 {
 	margin-top: 0;
-	font-size: 1.4em;
 }
 
 .stack {

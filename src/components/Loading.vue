@@ -34,7 +34,6 @@ function move() {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 .loading-container {
-  font-family: 'Pixelify Sans', sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;

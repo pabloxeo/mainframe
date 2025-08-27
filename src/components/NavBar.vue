@@ -51,7 +51,6 @@ onUnmounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 .header {
-    font-family: 'Pixelify Sans', sans-serif;
     height: 4em;
     color: white;
     background-color: transparent;

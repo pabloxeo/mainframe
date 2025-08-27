@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="license">
-      &copy; 2025 Pablo Cantudo Gómez - Licensed under the MIT License.
+      &copy; 2025 Pablo Cantudo Gomez - Licensed under the MIT License.
     </div>
   </footer>
 </template>
@@ -22,6 +22,6 @@ export default {
   bottom: 0;
 }
 .license {
-  font-size: 0.9rem;
+  font-size: 1.0rem;
 }
 </style>
