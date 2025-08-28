@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import onImg from '../assets/on.png'
+import logo from '../assets/logo_white.png'
 import menu from '../assets/menu.png'
 
-const imageSrc = ref(onImg)
+const imageSrc = ref(logo)
 
 const menuSrc = ref(menu)
 
@@ -87,27 +87,5 @@ onUnmounted(() => {
     height: 90px;
 }
 
-/* On small screens, we *conditionally* hide the links */
-@media only screen and (max-width: 1000px) {
-    .links {
-        flex-direction: column;
-        background-color: black;
-        position: absolute;
-        right: 1em;
-        top: 100px;
-        padding: 1em;
-        border-radius: 0.5em;
-        gap: 1em;
-        z-index: 3;
-    }
 
-    .links.mobile-hidden {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-}
 </style>

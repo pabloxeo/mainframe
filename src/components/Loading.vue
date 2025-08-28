@@ -53,7 +53,7 @@ function move() {
 #loading{
   width: inherit;
   position: absolute;
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: rgb(0, 0, 0);
 }
 
